@@ -1,0 +1,795 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6DA7EE161F163BFF0034D93C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA7EE151F163BFF0034D93C /* AppDelegate.swift */; };
+		6DA7EE181F163BFF0034D93C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA7EE171F163BFF0034D93C /* ViewController.swift */; };
+		6DA7EE1B1F163BFF0034D93C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA7EE191F163BFF0034D93C /* Main.storyboard */; };
+		6DA7EE1D1F163BFF0034D93C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DA7EE1C1F163BFF0034D93C /* Assets.xcassets */; };
+		6DA7EE201F163BFF0034D93C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA7EE1E1F163BFF0034D93C /* LaunchScreen.storyboard */; };
+		6DA7EE2B1F163BFF0034D93C /* MAVPlayerDmeoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA7EE2A1F163BFF0034D93C /* MAVPlayerDmeoTests.swift */; };
+		6DA7EE361F163BFF0034D93C /* MAVPlayerDmeoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA7EE351F163BFF0034D93C /* MAVPlayerDmeoUITests.swift */; };
+		6DA7EE581F1640380034D93C /* DeviceTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA7EE491F1640380034D93C /* DeviceTool.m */; };
+		6DA7EE591F1640380034D93C /* MPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA7EE4A1F1640380034D93C /* MPlayerView.swift */; };
+		6DA7EE5A1F1640380034D93C /* ParsingEncrypteString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA7EE4B1F1640380034D93C /* ParsingEncrypteString.swift */; };
+		6DA7EE5B1F1640380034D93C /* 2017-03-15-2 libSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7EE4E1F1640380034D93C /* 2017-03-15-2 libSDK.a */; };
+		6DA7EE5C1F1640380034D93C /* RateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA7EE551F1640380034D93C /* RateView.swift */; };
+		6DA7EE5D1F1640380034D93C /* ResolutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA7EE561F1640380034D93C /* ResolutionView.swift */; };
+		6DA7EE5E1F1640380034D93C /* SwitchCircuitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA7EE571F1640380034D93C /* SwitchCircuitView.swift */; };
+		6DA7EE601F1640500034D93C /* MCommonTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA7EE5F1F1640500034D93C /* MCommonTool.swift */; };
+		6DA7EE621F1642D30034D93C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7EE611F1642D30034D93C /* UIKit.framework */; };
+		6DA7EE641F1642D80034D93C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7EE631F1642D80034D93C /* QuartzCore.framework */; };
+		6DA7EE661F1642DE0034D93C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7EE651F1642DE0034D93C /* OpenGLES.framework */; };
+		6DA7EE681F1642E40034D93C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7EE671F1642E40034D93C /* MediaPlayer.framework */; };
+		6DA7EE6A1F1642E90034D93C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7EE691F1642E90034D93C /* Foundation.framework */; };
+		6DA7EE6C1F1642F10034D93C /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7EE6B1F1642F10034D93C /* CoreVideo.framework */; };
+		6DA7EE6E1F1642F80034D93C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7EE6D1F1642F80034D93C /* CoreMedia.framework */; };
+		6DA7EE701F1642FF0034D93C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7EE6F1F1642FF0034D93C /* CoreGraphics.framework */; };
+		6DA7EE721F1643040034D93C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7EE711F1643040034D93C /* AudioToolbox.framework */; };
+		6DA7EE741F1643090034D93C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7EE731F1643090034D93C /* AVFoundation.framework */; };
+		6DA7EE761F1643120034D93C /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7EE751F1643120034D93C /* libiconv.tbd */; };
+		6DA7EE781F1643190034D93C /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7EE771F1643190034D93C /* libstdc++.tbd */; };
+		6DA7EE7A1F16431F0034D93C /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7EE791F16431F0034D93C /* libbz2.tbd */; };
+		6DA7EE7C1F16432B0034D93C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7EE7B1F16432B0034D93C /* libsqlite3.tbd */; };
+		6DA7EE7E1F1643310034D93C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7EE7D1F1643310034D93C /* CoreFoundation.framework */; };
+		6DA7EE801F1643380034D93C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7EE7F1F1643380034D93C /* SystemConfiguration.framework */; };
+		6DA7EE821F16433D0034D93C /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7EE811F16433C0034D93C /* CoreTelephony.framework */; };
+		6DA7EE841F1643460034D93C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7EE831F1643460034D93C /* libc++.tbd */; };
+		6DA7EE861F16434B0034D93C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7EE851F16434B0034D93C /* ImageIO.framework */; };
+		6DA7EE881F1643500034D93C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7EE871F1643500034D93C /* Security.framework */; };
+		A1223EA6C9326AE70BBE684A /* Pods_MAVPlayerDmeo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 314B32516A5C5C7556123199 /* Pods_MAVPlayerDmeo.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6DA7EE271F163BFF0034D93C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6DA7EE0A1F163BFF0034D93C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6DA7EE111F163BFF0034D93C;
+			remoteInfo = MAVPlayerDmeo;
+		};
+		6DA7EE321F163BFF0034D93C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6DA7EE0A1F163BFF0034D93C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6DA7EE111F163BFF0034D93C;
+			remoteInfo = MAVPlayerDmeo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04C4722D854F5EB8CB4A8C32 /* Pods-MAVPlayerDmeo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MAVPlayerDmeo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MAVPlayerDmeo/Pods-MAVPlayerDmeo.debug.xcconfig"; sourceTree = "<group>"; };
+		2A1CAF94B4F6C42A237DED5C /* Pods-MAVPlayerDmeo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MAVPlayerDmeo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MAVPlayerDmeo/Pods-MAVPlayerDmeo.release.xcconfig"; sourceTree = "<group>"; };
+		314B32516A5C5C7556123199 /* Pods_MAVPlayerDmeo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MAVPlayerDmeo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DA7EE121F163BFF0034D93C /* MDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DA7EE151F163BFF0034D93C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6DA7EE171F163BFF0034D93C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6DA7EE1A1F163BFF0034D93C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6DA7EE1C1F163BFF0034D93C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6DA7EE1F1F163BFF0034D93C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6DA7EE211F163BFF0034D93C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DA7EE261F163BFF0034D93C /* MAVPlayerDmeoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MAVPlayerDmeoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DA7EE2A1F163BFF0034D93C /* MAVPlayerDmeoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAVPlayerDmeoTests.swift; sourceTree = "<group>"; };
+		6DA7EE2C1F163BFF0034D93C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DA7EE311F163BFF0034D93C /* MAVPlayerDmeoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MAVPlayerDmeoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DA7EE351F163BFF0034D93C /* MAVPlayerDmeoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAVPlayerDmeoUITests.swift; sourceTree = "<group>"; };
+		6DA7EE371F163BFF0034D93C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DA7EE431F163CBD0034D93C /* MAVPlayerDmeo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MAVPlayerDmeo-Bridging-Header.h"; sourceTree = "<group>"; };
+		6DA7EE481F1640380034D93C /* DeviceTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceTool.h; sourceTree = "<group>"; };
+		6DA7EE491F1640380034D93C /* DeviceTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceTool.m; sourceTree = "<group>"; };
+		6DA7EE4A1F1640380034D93C /* MPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPlayerView.swift; sourceTree = "<group>"; };
+		6DA7EE4B1F1640380034D93C /* ParsingEncrypteString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsingEncrypteString.swift; sourceTree = "<group>"; };
+		6DA7EE4E1F1640380034D93C /* 2017-03-15-2 libSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "2017-03-15-2 libSDK.a"; sourceTree = "<group>"; };
+		6DA7EE501F1640380034D93C /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Channel.h; sourceTree = "<group>"; };
+		6DA7EE511F1640380034D93C /* DownloadInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadInfo.h; sourceTree = "<group>"; };
+		6DA7EE521F1640380034D93C /* DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
+		6DA7EE531F1640380034D93C /* MediaServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaServer.h; sourceTree = "<group>"; };
+		6DA7EE541F1640380034D93C /* Speed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Speed.h; sourceTree = "<group>"; };
+		6DA7EE551F1640380034D93C /* RateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateView.swift; sourceTree = "<group>"; };
+		6DA7EE561F1640380034D93C /* ResolutionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResolutionView.swift; sourceTree = "<group>"; };
+		6DA7EE571F1640380034D93C /* SwitchCircuitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCircuitView.swift; sourceTree = "<group>"; };
+		6DA7EE5F1F1640500034D93C /* MCommonTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCommonTool.swift; sourceTree = "<group>"; };
+		6DA7EE611F1642D30034D93C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6DA7EE631F1642D80034D93C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6DA7EE651F1642DE0034D93C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		6DA7EE671F1642E40034D93C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		6DA7EE691F1642E90034D93C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6DA7EE6B1F1642F10034D93C /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		6DA7EE6D1F1642F80034D93C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		6DA7EE6F1F1642FF0034D93C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6DA7EE711F1643040034D93C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		6DA7EE731F1643090034D93C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		6DA7EE751F1643120034D93C /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		6DA7EE771F1643190034D93C /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		6DA7EE791F16431F0034D93C /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		6DA7EE7B1F16432B0034D93C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		6DA7EE7D1F1643310034D93C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		6DA7EE7F1F1643380034D93C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6DA7EE811F16433C0034D93C /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		6DA7EE831F1643460034D93C /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		6DA7EE851F16434B0034D93C /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		6DA7EE871F1643500034D93C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6DA7EE0F1F163BFF0034D93C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DA7EE881F1643500034D93C /* Security.framework in Frameworks */,
+				6DA7EE861F16434B0034D93C /* ImageIO.framework in Frameworks */,
+				6DA7EE841F1643460034D93C /* libc++.tbd in Frameworks */,
+				6DA7EE821F16433D0034D93C /* CoreTelephony.framework in Frameworks */,
+				6DA7EE801F1643380034D93C /* SystemConfiguration.framework in Frameworks */,
+				6DA7EE7E1F1643310034D93C /* CoreFoundation.framework in Frameworks */,
+				6DA7EE7C1F16432B0034D93C /* libsqlite3.tbd in Frameworks */,
+				6DA7EE7A1F16431F0034D93C /* libbz2.tbd in Frameworks */,
+				6DA7EE781F1643190034D93C /* libstdc++.tbd in Frameworks */,
+				6DA7EE761F1643120034D93C /* libiconv.tbd in Frameworks */,
+				6DA7EE741F1643090034D93C /* AVFoundation.framework in Frameworks */,
+				6DA7EE721F1643040034D93C /* AudioToolbox.framework in Frameworks */,
+				6DA7EE701F1642FF0034D93C /* CoreGraphics.framework in Frameworks */,
+				6DA7EE6E1F1642F80034D93C /* CoreMedia.framework in Frameworks */,
+				6DA7EE6C1F1642F10034D93C /* CoreVideo.framework in Frameworks */,
+				6DA7EE6A1F1642E90034D93C /* Foundation.framework in Frameworks */,
+				6DA7EE681F1642E40034D93C /* MediaPlayer.framework in Frameworks */,
+				6DA7EE661F1642DE0034D93C /* OpenGLES.framework in Frameworks */,
+				6DA7EE641F1642D80034D93C /* QuartzCore.framework in Frameworks */,
+				6DA7EE621F1642D30034D93C /* UIKit.framework in Frameworks */,
+				A1223EA6C9326AE70BBE684A /* Pods_MAVPlayerDmeo.framework in Frameworks */,
+				6DA7EE5B1F1640380034D93C /* 2017-03-15-2 libSDK.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DA7EE231F163BFF0034D93C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DA7EE2E1F163BFF0034D93C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15295D886861E0073C3CC233 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6DA7EE871F1643500034D93C /* Security.framework */,
+				6DA7EE851F16434B0034D93C /* ImageIO.framework */,
+				6DA7EE831F1643460034D93C /* libc++.tbd */,
+				6DA7EE811F16433C0034D93C /* CoreTelephony.framework */,
+				6DA7EE7F1F1643380034D93C /* SystemConfiguration.framework */,
+				6DA7EE7D1F1643310034D93C /* CoreFoundation.framework */,
+				6DA7EE7B1F16432B0034D93C /* libsqlite3.tbd */,
+				6DA7EE791F16431F0034D93C /* libbz2.tbd */,
+				6DA7EE771F1643190034D93C /* libstdc++.tbd */,
+				6DA7EE751F1643120034D93C /* libiconv.tbd */,
+				6DA7EE731F1643090034D93C /* AVFoundation.framework */,
+				6DA7EE711F1643040034D93C /* AudioToolbox.framework */,
+				6DA7EE6F1F1642FF0034D93C /* CoreGraphics.framework */,
+				6DA7EE6D1F1642F80034D93C /* CoreMedia.framework */,
+				6DA7EE6B1F1642F10034D93C /* CoreVideo.framework */,
+				6DA7EE691F1642E90034D93C /* Foundation.framework */,
+				6DA7EE671F1642E40034D93C /* MediaPlayer.framework */,
+				6DA7EE651F1642DE0034D93C /* OpenGLES.framework */,
+				6DA7EE631F1642D80034D93C /* QuartzCore.framework */,
+				6DA7EE611F1642D30034D93C /* UIKit.framework */,
+				314B32516A5C5C7556123199 /* Pods_MAVPlayerDmeo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		461BC50F6DC5819B29038556 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				04C4722D854F5EB8CB4A8C32 /* Pods-MAVPlayerDmeo.debug.xcconfig */,
+				2A1CAF94B4F6C42A237DED5C /* Pods-MAVPlayerDmeo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6DA7EE091F163BFF0034D93C = {
+			isa = PBXGroup;
+			children = (
+				6DA7EE141F163BFF0034D93C /* MAVPlayerDmeo */,
+				6DA7EE291F163BFF0034D93C /* MAVPlayerDmeoTests */,
+				6DA7EE341F163BFF0034D93C /* MAVPlayerDmeoUITests */,
+				6DA7EE131F163BFF0034D93C /* Products */,
+				461BC50F6DC5819B29038556 /* Pods */,
+				15295D886861E0073C3CC233 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6DA7EE131F163BFF0034D93C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6DA7EE121F163BFF0034D93C /* MDemo.app */,
+				6DA7EE261F163BFF0034D93C /* MAVPlayerDmeoTests.xctest */,
+				6DA7EE311F163BFF0034D93C /* MAVPlayerDmeoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6DA7EE141F163BFF0034D93C /* MAVPlayerDmeo */ = {
+			isa = PBXGroup;
+			children = (
+				6DA7EE471F1640380034D93C /* AVPlayer */,
+				6DA7EE151F163BFF0034D93C /* AppDelegate.swift */,
+				6DA7EE171F163BFF0034D93C /* ViewController.swift */,
+				6DA7EE191F163BFF0034D93C /* Main.storyboard */,
+				6DA7EE1C1F163BFF0034D93C /* Assets.xcassets */,
+				6DA7EE1E1F163BFF0034D93C /* LaunchScreen.storyboard */,
+				6DA7EE211F163BFF0034D93C /* Info.plist */,
+				6DA7EE431F163CBD0034D93C /* MAVPlayerDmeo-Bridging-Header.h */,
+				6DA7EE5F1F1640500034D93C /* MCommonTool.swift */,
+			);
+			path = MAVPlayerDmeo;
+			sourceTree = "<group>";
+		};
+		6DA7EE291F163BFF0034D93C /* MAVPlayerDmeoTests */ = {
+			isa = PBXGroup;
+			children = (
+				6DA7EE2A1F163BFF0034D93C /* MAVPlayerDmeoTests.swift */,
+				6DA7EE2C1F163BFF0034D93C /* Info.plist */,
+			);
+			path = MAVPlayerDmeoTests;
+			sourceTree = "<group>";
+		};
+		6DA7EE341F163BFF0034D93C /* MAVPlayerDmeoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6DA7EE351F163BFF0034D93C /* MAVPlayerDmeoUITests.swift */,
+				6DA7EE371F163BFF0034D93C /* Info.plist */,
+			);
+			path = MAVPlayerDmeoUITests;
+			sourceTree = "<group>";
+		};
+		6DA7EE471F1640380034D93C /* AVPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				6DA7EE4C1F1640380034D93C /* PlayerSDK */,
+				6DA7EE481F1640380034D93C /* DeviceTool.h */,
+				6DA7EE491F1640380034D93C /* DeviceTool.m */,
+				6DA7EE4A1F1640380034D93C /* MPlayerView.swift */,
+				6DA7EE4B1F1640380034D93C /* ParsingEncrypteString.swift */,
+				6DA7EE551F1640380034D93C /* RateView.swift */,
+				6DA7EE561F1640380034D93C /* ResolutionView.swift */,
+				6DA7EE571F1640380034D93C /* SwitchCircuitView.swift */,
+			);
+			path = AVPlayer;
+			sourceTree = "<group>";
+		};
+		6DA7EE4C1F1640380034D93C /* PlayerSDK */ = {
+			isa = PBXGroup;
+			children = (
+				6DA7EE4D1F1640380034D93C /* SDK */,
+			);
+			path = PlayerSDK;
+			sourceTree = "<group>";
+		};
+		6DA7EE4D1F1640380034D93C /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				6DA7EE4E1F1640380034D93C /* 2017-03-15-2 libSDK.a */,
+				6DA7EE4F1F1640380034D93C /* include */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		6DA7EE4F1F1640380034D93C /* include */ = {
+			isa = PBXGroup;
+			children = (
+				6DA7EE501F1640380034D93C /* Channel.h */,
+				6DA7EE511F1640380034D93C /* DownloadInfo.h */,
+				6DA7EE521F1640380034D93C /* DownloadManager.h */,
+				6DA7EE531F1640380034D93C /* MediaServer.h */,
+				6DA7EE541F1640380034D93C /* Speed.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6DA7EE111F163BFF0034D93C /* MAVPlayerDmeo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6DA7EE3A1F163BFF0034D93C /* Build configuration list for PBXNativeTarget "MAVPlayerDmeo" */;
+			buildPhases = (
+				1EEEE3CBFBFE676BABD91A2A /* [CP] Check Pods Manifest.lock */,
+				6DA7EE0E1F163BFF0034D93C /* Sources */,
+				6DA7EE0F1F163BFF0034D93C /* Frameworks */,
+				6DA7EE101F163BFF0034D93C /* Resources */,
+				BC063FFA4A7D7E0090749F16 /* [CP] Embed Pods Frameworks */,
+				20615C66383671F1A3710C68 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MAVPlayerDmeo;
+			productName = MAVPlayerDmeo;
+			productReference = 6DA7EE121F163BFF0034D93C /* MDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6DA7EE251F163BFF0034D93C /* MAVPlayerDmeoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6DA7EE3D1F163BFF0034D93C /* Build configuration list for PBXNativeTarget "MAVPlayerDmeoTests" */;
+			buildPhases = (
+				6DA7EE221F163BFF0034D93C /* Sources */,
+				6DA7EE231F163BFF0034D93C /* Frameworks */,
+				6DA7EE241F163BFF0034D93C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6DA7EE281F163BFF0034D93C /* PBXTargetDependency */,
+			);
+			name = MAVPlayerDmeoTests;
+			productName = MAVPlayerDmeoTests;
+			productReference = 6DA7EE261F163BFF0034D93C /* MAVPlayerDmeoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6DA7EE301F163BFF0034D93C /* MAVPlayerDmeoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6DA7EE401F163BFF0034D93C /* Build configuration list for PBXNativeTarget "MAVPlayerDmeoUITests" */;
+			buildPhases = (
+				6DA7EE2D1F163BFF0034D93C /* Sources */,
+				6DA7EE2E1F163BFF0034D93C /* Frameworks */,
+				6DA7EE2F1F163BFF0034D93C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6DA7EE331F163BFF0034D93C /* PBXTargetDependency */,
+			);
+			name = MAVPlayerDmeoUITests;
+			productName = MAVPlayerDmeoUITests;
+			productReference = 6DA7EE311F163BFF0034D93C /* MAVPlayerDmeoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6DA7EE0A1F163BFF0034D93C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Magic;
+				TargetAttributes = {
+					6DA7EE111F163BFF0034D93C = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = B8G22B5BWW;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+					6DA7EE251F163BFF0034D93C = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = B8G22B5BWW;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6DA7EE111F163BFF0034D93C;
+					};
+					6DA7EE301F163BFF0034D93C = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = B8G22B5BWW;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6DA7EE111F163BFF0034D93C;
+					};
+				};
+			};
+			buildConfigurationList = 6DA7EE0D1F163BFF0034D93C /* Build configuration list for PBXProject "MAVPlayerDmeo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6DA7EE091F163BFF0034D93C;
+			productRefGroup = 6DA7EE131F163BFF0034D93C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6DA7EE111F163BFF0034D93C /* MAVPlayerDmeo */,
+				6DA7EE251F163BFF0034D93C /* MAVPlayerDmeoTests */,
+				6DA7EE301F163BFF0034D93C /* MAVPlayerDmeoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6DA7EE101F163BFF0034D93C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DA7EE201F163BFF0034D93C /* LaunchScreen.storyboard in Resources */,
+				6DA7EE1D1F163BFF0034D93C /* Assets.xcassets in Resources */,
+				6DA7EE1B1F163BFF0034D93C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DA7EE241F163BFF0034D93C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DA7EE2F1F163BFF0034D93C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1EEEE3CBFBFE676BABD91A2A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		20615C66383671F1A3710C68 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MAVPlayerDmeo/Pods-MAVPlayerDmeo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC063FFA4A7D7E0090749F16 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MAVPlayerDmeo/Pods-MAVPlayerDmeo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6DA7EE0E1F163BFF0034D93C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DA7EE601F1640500034D93C /* MCommonTool.swift in Sources */,
+				6DA7EE581F1640380034D93C /* DeviceTool.m in Sources */,
+				6DA7EE591F1640380034D93C /* MPlayerView.swift in Sources */,
+				6DA7EE5E1F1640380034D93C /* SwitchCircuitView.swift in Sources */,
+				6DA7EE5D1F1640380034D93C /* ResolutionView.swift in Sources */,
+				6DA7EE5C1F1640380034D93C /* RateView.swift in Sources */,
+				6DA7EE181F163BFF0034D93C /* ViewController.swift in Sources */,
+				6DA7EE5A1F1640380034D93C /* ParsingEncrypteString.swift in Sources */,
+				6DA7EE161F163BFF0034D93C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DA7EE221F163BFF0034D93C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DA7EE2B1F163BFF0034D93C /* MAVPlayerDmeoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DA7EE2D1F163BFF0034D93C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DA7EE361F163BFF0034D93C /* MAVPlayerDmeoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6DA7EE281F163BFF0034D93C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6DA7EE111F163BFF0034D93C /* MAVPlayerDmeo */;
+			targetProxy = 6DA7EE271F163BFF0034D93C /* PBXContainerItemProxy */;
+		};
+		6DA7EE331F163BFF0034D93C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6DA7EE111F163BFF0034D93C /* MAVPlayerDmeo */;
+			targetProxy = 6DA7EE321F163BFF0034D93C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6DA7EE191F163BFF0034D93C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6DA7EE1A1F163BFF0034D93C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6DA7EE1E1F163BFF0034D93C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6DA7EE1F1F163BFF0034D93C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6DA7EE381F163BFF0034D93C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6DA7EE391F163BFF0034D93C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6DA7EE3B1F163BFF0034D93C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04C4722D854F5EB8CB4A8C32 /* Pods-MAVPlayerDmeo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = B8G22B5BWW;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MAVPlayerDmeo/MAVPlayerDmeo-Bridging-Header.h";
+				INFOPLIST_FILE = MAVPlayerDmeo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MAVPlayerDmeo/AVPlayer/PlayerSDK/SDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.magic.MAVPlayerDmeo;
+				PRODUCT_NAME = MDemo;
+				SWIFT_OBJC_BRIDGING_HEADER = "MAVPlayerDmeo/MAVPlayerDmeo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6DA7EE3C1F163BFF0034D93C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A1CAF94B4F6C42A237DED5C /* Pods-MAVPlayerDmeo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = B8G22B5BWW;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MAVPlayerDmeo/MAVPlayerDmeo-Bridging-Header.h";
+				INFOPLIST_FILE = MAVPlayerDmeo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MAVPlayerDmeo/AVPlayer/PlayerSDK/SDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.magic.MAVPlayerDmeo;
+				PRODUCT_NAME = MDemo;
+				SWIFT_OBJC_BRIDGING_HEADER = "MAVPlayerDmeo/MAVPlayerDmeo-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		6DA7EE3E1F163BFF0034D93C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = B8G22B5BWW;
+				INFOPLIST_FILE = MAVPlayerDmeoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.magic.MAVPlayerDmeoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MAVPlayerDmeo.app/MAVPlayerDmeo";
+			};
+			name = Debug;
+		};
+		6DA7EE3F1F163BFF0034D93C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = B8G22B5BWW;
+				INFOPLIST_FILE = MAVPlayerDmeoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.magic.MAVPlayerDmeoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MAVPlayerDmeo.app/MAVPlayerDmeo";
+			};
+			name = Release;
+		};
+		6DA7EE411F163BFF0034D93C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = B8G22B5BWW;
+				INFOPLIST_FILE = MAVPlayerDmeoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.magic.MAVPlayerDmeoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MAVPlayerDmeo;
+			};
+			name = Debug;
+		};
+		6DA7EE421F163BFF0034D93C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = B8G22B5BWW;
+				INFOPLIST_FILE = MAVPlayerDmeoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.magic.MAVPlayerDmeoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MAVPlayerDmeo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6DA7EE0D1F163BFF0034D93C /* Build configuration list for PBXProject "MAVPlayerDmeo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DA7EE381F163BFF0034D93C /* Debug */,
+				6DA7EE391F163BFF0034D93C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6DA7EE3A1F163BFF0034D93C /* Build configuration list for PBXNativeTarget "MAVPlayerDmeo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DA7EE3B1F163BFF0034D93C /* Debug */,
+				6DA7EE3C1F163BFF0034D93C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6DA7EE3D1F163BFF0034D93C /* Build configuration list for PBXNativeTarget "MAVPlayerDmeoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DA7EE3E1F163BFF0034D93C /* Debug */,
+				6DA7EE3F1F163BFF0034D93C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6DA7EE401F163BFF0034D93C /* Build configuration list for PBXNativeTarget "MAVPlayerDmeoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DA7EE411F163BFF0034D93C /* Debug */,
+				6DA7EE421F163BFF0034D93C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6DA7EE0A1F163BFF0034D93C /* Project object */;
+}
