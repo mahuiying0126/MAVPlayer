@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D9FBA021F1CD6CE00CD193D /* 播放演示.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6D9FBA011F1CD6CE00CD193D /* 播放演示.gif */; };
 		6DA7EE161F163BFF0034D93C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA7EE151F163BFF0034D93C /* AppDelegate.swift */; };
 		6DA7EE181F163BFF0034D93C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA7EE171F163BFF0034D93C /* ViewController.swift */; };
 		6DA7EE1B1F163BFF0034D93C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA7EE191F163BFF0034D93C /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 		04C4722D854F5EB8CB4A8C32 /* Pods-MAVPlayerDmeo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MAVPlayerDmeo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MAVPlayerDmeo/Pods-MAVPlayerDmeo.debug.xcconfig"; sourceTree = "<group>"; };
 		2A1CAF94B4F6C42A237DED5C /* Pods-MAVPlayerDmeo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MAVPlayerDmeo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MAVPlayerDmeo/Pods-MAVPlayerDmeo.release.xcconfig"; sourceTree = "<group>"; };
 		314B32516A5C5C7556123199 /* Pods_MAVPlayerDmeo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MAVPlayerDmeo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D9FBA011F1CD6CE00CD193D /* 播放演示.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "播放演示.gif"; sourceTree = "<group>"; };
 		6DA7EE121F163BFF0034D93C /* MDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DA7EE151F163BFF0034D93C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DA7EE171F163BFF0034D93C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +202,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6D9FBA001F1CD6C500CD193D /* Mimage */ = {
+			isa = PBXGroup;
+			children = (
+				6D9FBA011F1CD6CE00CD193D /* 播放演示.gif */,
+			);
+			path = Mimage;
+			sourceTree = "<group>";
+		};
 		6DA7EE091F163BFF0034D93C = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +235,7 @@
 		6DA7EE141F163BFF0034D93C /* MAVPlayerDmeo */ = {
 			isa = PBXGroup;
 			children = (
+				6D9FBA001F1CD6C500CD193D /* Mimage */,
 				6DA7EE471F1640380034D93C /* AVPlayer */,
 				6DA7EE151F163BFF0034D93C /* AppDelegate.swift */,
 				6DA7EE171F163BFF0034D93C /* ViewController.swift */,
@@ -415,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DA7EE201F163BFF0034D93C /* LaunchScreen.storyboard in Resources */,
+				6D9FBA021F1CD6CE00CD193D /* 播放演示.gif in Resources */,
 				6DA7EE1D1F163BFF0034D93C /* Assets.xcassets in Resources */,
 				6DA7EE1B1F163BFF0034D93C /* Main.storyboard in Resources */,
 			);
