@@ -588,6 +588,7 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
                 self.status! = .PlayerFaild
                 break
             default:
+                stopAnimation()
                 break
             }
         }else if keyPath == "loadedTimeRanges"{
@@ -650,6 +651,9 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
      */
     @objc private func playOrPauseButtonClick(sender:UIButton){
         
+        if sender.isHidden {
+            return
+        }
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
             self.player?.pause()
@@ -728,13 +732,16 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
         switch orientation {
             
         case .portraitUpsideDown:
+            /// 设备(屏幕)直立，上下顛倒
             ///如果是UpsideDown就直接回到竖屏
             interfaceOrientation(orientation: .portrait)
         case .portrait:
+            /// 设备(屏幕)直立
             ///如果是竖屏就直接右旋转
             interfaceOrientation(orientation: .landscapeRight)
             break
         case .landscapeLeft:
+            /// 设备(屏幕)向左横置
             ///如果是小屏一律右旋转，如果是大屏的LandscapeLeft，就竖屏
             if !isFullScreen {
                 interfaceOrientation(orientation: .landscapeRight)
@@ -743,6 +750,7 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
             }
             break
         case .landscapeRight:
+            /// 设备(屏幕)向右橫置
             ///如果是小屏一律右旋转，如果是大屏的LandscapeLeft，就竖屏
             if !isFullScreen {
                 interfaceOrientation(orientation: .landscapeRight)
@@ -844,12 +852,13 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
         if isLocked {
             return
         }
-        
+        ///根据设备方向来判断的
         let orientation = UIDevice.current.orientation
         
         switch orientation {
         case .portraitUpsideDown:
-            let frame = UIScreen.main.applicationFrame
+            /// 设备(屏幕)直立，上下顛倒
+            let frame = UIScreen.main.bounds
             self.center = CGPoint.init(x: frame.origin.x + ceil(frame.size.width/2), y: frame.origin.y + ceil(frame.size.height/2))
             self.frame = frame
             self.centerPlayOrPauseBtn?.setImage(MIMAGE("Player_pause_btn"), for: .normal)
@@ -866,7 +875,8 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
             break
             
         case .portrait:
-            let frame = UIScreen.main.applicationFrame
+            /// 设备(屏幕)直立
+            let frame = UIScreen.main.bounds
             self.center = CGPoint.init(x: frame.origin.x + ceil(frame.size.width/2), y: frame.origin.y + ceil((frame.size.width*9/16)/2))
             self.frame = CGRect.init(x: frame.origin.x, y: frame.origin.x, width: frame.size.width, height: Screen_width * 9/16)
             self.centerPlayOrPauseBtn?.setImage(MIMAGE("Player_pause_btn_small"), for: .normal)
@@ -882,8 +892,8 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
             break
             
         case .landscapeLeft:
-            
-            let frame = UIScreen.main.applicationFrame
+            /// 设备(屏幕)向左横置
+            let frame = UIScreen.main.bounds
             self.center = CGPoint.init(x: frame.origin.x + ceil(frame.size.width/2), y: frame.origin.y + ceil(frame.size.height/2))
             self.frame = frame
             self.centerPlayOrPauseBtn?.setImage(MIMAGE("Player_pause_btn"), for: .normal)
@@ -898,7 +908,8 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
             break
             
         case .landscapeRight:
-            let frame = UIScreen.main.applicationFrame
+            /// 设备(屏幕)向右橫置
+            let frame = UIScreen.main.bounds
             self.center = CGPoint.init(x: frame.origin.x + ceil(frame.size.width/2), y: frame.origin.y + ceil(frame.size.height/2))
             self.frame = frame
             self.centerPlayOrPauseBtn?.setImage(MIMAGE("Player_pause_btn"), for: .normal)
