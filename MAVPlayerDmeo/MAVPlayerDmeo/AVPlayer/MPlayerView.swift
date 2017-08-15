@@ -62,7 +62,7 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
     /** *手势,枚举 */
     private var panDirection : PanDirection?
     /** *是否在调节音量 */
-    private var isVolume = Bool()
+    private var isVolume : Bool = false
     /** *声音进度条 */
     private var volumeViewSlider : UISlider?
     /** *播放器状态 */
@@ -112,30 +112,30 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
     /** *视频类型 */
     var videoType : String?
     /** *清晰度 */
-    var chanel : Int32?
+    var chanel : Int32 = CHANNEL_HIGH
     /** *是否为本地视频 */
-    var isLOCAL = Bool()
+    var isLOCAL : Bool = false
     /** *当前时长 */
-    final var currentTime : NSInteger?
+    final var currentTime : NSInteger = 0
     /** *总时长 */
-    final var totalTime : NSInteger?
+    final var totalTime : NSInteger = 0
     /** *显示控制层定时器 */
     private var timer : Timer?
     /** *是否正在拖动进度条 */
-    private var progressDragging : Bool?
+    private var progressDragging : Bool = false
     /** *控制层是否显示 */
-    private var controlViewIsShowing : Bool?
+    private var controlViewIsShowing : Bool = false
     /** *是否锁屏屏幕 */
-    private var isLocked = Bool()
+    private var isLocked : Bool = false
     /** *是否全屏 */
-    private var isFullScreen = Bool()
+    private var isFullScreen : Bool = false
     /** *时间观察 */
     private var timeObserve : Any?
     private var resolutionView : ResolutionView?
     /** *是否播放完毕 */
-    var playEnd = Bool()
+    var playEnd : Bool = false
     /** *当前倍速 */
-    var rateValue : Float?
+    var rateValue : Float = 1.0
     
     /// 创建播放器单例
     static let shared = MPlayerView()
@@ -143,14 +143,14 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
         super.init(frame: frame)
     }
     
-     /// 初始化播放器视图
-     ///
-     /// - Parameters:
-     ///   - frame: 播放器尺寸
-     ///   - url: videoUrl(hhtp://非加密链接)
-     ///   - type: 类型:音频 || 视频
-     ///   - parseString: 需要解析的码
-     func initWithFrame(frame:CGRect,videoUrl:String,type:String) -> MPlayerView {
+    /// 初始化播放器视图
+    ///
+    /// - Parameters:
+    ///   - frame: 播放器尺寸
+    ///   - url: videoUrl(hhtp://非加密链接)
+    ///   - type: 类型:音频 || 视频
+    ///   - parseString: 需要解析的码
+    func initWithFrame(frame:CGRect,videoUrl:String,type:String) -> MPlayerView {
         self.backgroundColor = UIColor.black
         //开启屏幕旋转
         let appde = UIApplication.shared.delegate as! AppDelegate
@@ -200,7 +200,7 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
      * 初始化playerItem
      */
     private func getPlayItemWithURLString(url:String) -> AVPlayerItem{
-
+        
         let Item = AVPlayerItem.init(url: NSURL.init(string: url.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlPathAllowed)!)! as URL)
         
         if playerItem == Item {
@@ -226,9 +226,9 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
         
         self.playerItem = self.getPlayItemWithURLString(url: videoURLStr)
         self.player?.replaceCurrentItem(with: self.playerItem)
-        self.player?.seek(to: CMTimeMake(Int64(currentTime!), 1))
-        self.player?.rate = self.rateValue!
-//        self.player?.play()
+        self.player?.seek(to: CMTimeMake(Int64(currentTime), 1))
+        self.player?.rate = self.rateValue
+        //        self.player?.play()
     }
     
     //MARK: - 播放器手势添加与创建
@@ -255,7 +255,7 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
      */
     @objc private func tapOneClick(gesture:UIGestureRecognizer){
         if !playEnd {
-            if controlViewIsShowing! {
+            if controlViewIsShowing {
                 hideControlView()
                 cancleDelay()
                 controlViewIsShowing = false
@@ -425,7 +425,7 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
                 break
             }
         }
-    
+        
         ///监听耳机插入和拔掉通知
         NotificationCenter.default.addObserver(self, selector: #selector(audioRouteChangeListenerCallback(notification:)), name: NSNotification.Name.AVAudioSessionRouteChange, object: nil)
     }
@@ -472,7 +472,7 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
      * 隐藏控制层
      */
     @objc private func hideControlView(){
-        UIView.animate(withDuration: 0.35) { 
+        UIView.animate(withDuration: 0.35) {
             self.controlViewIsShowing = false
             self.bottomImageView?.alpha = 0.0
             if self.playEnd {
@@ -491,7 +491,7 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
         cancleDelay()
         
     }
-
+    
     /*
      *  显示控制层
      */
@@ -529,11 +529,11 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
      */
     private func stopAnimation(){
         self.activeView?.stopAnimating()
-        self.centerPlayOrPauseBtn?.isHidden = controlViewIsShowing! ? false : true
+        self.centerPlayOrPauseBtn?.isHidden = controlViewIsShowing ? false : true
         self.activeLB?.isHidden = true
-
+        
     }
-
+    
     /*
      * 播放器关闭
      */
@@ -568,7 +568,7 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
         topImageView?.alpha = 1.0
         self.status = .PlayerComplete
     }
-   
+    
     /*
      * 添加属性观察
      */
@@ -588,7 +588,6 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
                 self.status! = .PlayerFaild
                 break
             default:
-                stopAnimation()
                 break
             }
         }else if keyPath == "loadedTimeRanges"{
@@ -626,7 +625,7 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
                     self?.currentTimeLB?.text = currentTimeString
                     self?.totalTimeLB?.text = totalTimeString
                 }
-
+                
             }
             
         })
@@ -654,6 +653,7 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
         if sender.isHidden {
             return
         }
+        
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
             self.player?.pause()
@@ -667,23 +667,23 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
      */
     @objc private func clickRateBtnEvent(){
         
-        self.rateValue! += 0.2
-        if self.rateValue! >= 1.2 && self.rateValue! < 1.3 {
+        self.rateValue += 0.2
+        if self.rateValue >= 1.2 && self.rateValue < 1.3 {
             self.rateValue = 1.2
-        }else if self.rateValue! >= 1.4 && self.rateValue! < 1.5 {
+        }else if self.rateValue >= 1.4 && self.rateValue < 1.5 {
             self.rateValue = 1.5
-        }else if self.rateValue! > 1.5 {
+        }else if self.rateValue > 1.5 {
             self.rateValue = 1.0
         }
         
-        self.player?.rate = self.rateValue!
+        self.player?.rate = self.rateValue
         if isLOCAL {
             rateBtn?.setImage(MIMAGE("选中倍速"), for: .normal)
             ratelabel?.textColor = UIColorFromRGB(0xf6a54a)
-            ratelabel?.text = String.init(format: "倍速 %.1fx", self.rateValue!)
+            ratelabel?.text = String.init(format: "倍速 %.1fx", self.rateValue)
             
         }else{
-            rateView?.rateLB?.text = String.init(format: "倍速 %.1fx", self.rateValue!)
+            rateView?.rateLB?.text = String.init(format: "倍速 %.1fx", self.rateValue)
             rateView?.videoLB?.textColor = Whit
             rateView?.audioLB?.textColor = Whit
             rateView?.rateLB?.textColor = UIColorFromRGB(0xf6a54a)
@@ -700,13 +700,13 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
     @objc private func resolutionBtnClick(button:UIButton){
         if videoType == "VIDEO" {
             if (self.resolutionView?.isHidden)! {
-               self.resolutionView?.isHidden = false
+                self.resolutionView?.isHidden = false
             }else{
                 self.resolutionView?.isHidden = true
             }
         }
     }
-
+    
     /*
      * 重播按钮
      */
@@ -732,16 +732,13 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
         switch orientation {
             
         case .portraitUpsideDown:
-            /// 设备(屏幕)直立，上下顛倒
             ///如果是UpsideDown就直接回到竖屏
             interfaceOrientation(orientation: .portrait)
         case .portrait:
-            /// 设备(屏幕)直立
             ///如果是竖屏就直接右旋转
             interfaceOrientation(orientation: .landscapeRight)
             break
         case .landscapeLeft:
-            /// 设备(屏幕)向左横置
             ///如果是小屏一律右旋转，如果是大屏的LandscapeLeft，就竖屏
             if !isFullScreen {
                 interfaceOrientation(orientation: .landscapeRight)
@@ -750,7 +747,6 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
             }
             break
         case .landscapeRight:
-            /// 设备(屏幕)向右橫置
             ///如果是小屏一律右旋转，如果是大屏的LandscapeLeft，就竖屏
             if !isFullScreen {
                 interfaceOrientation(orientation: .landscapeRight)
@@ -809,15 +805,15 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
     }
     
     @objc private func progressSliderValueChanged(slider:UISlider){
-        if (totalTime != nil)  {
-            let chageTime = slider.value * Float(totalTime!)
+        if (totalTime > 0)  {
+            let chageTime = slider.value * Float(totalTime)
             self.currentTimeLB?.text = String.init(format: "%@", self.timeStringWithTime(times: NSInteger(chageTime)))
         }
     }
     
     @objc private func progressSliderTouchEnded(slider:UISlider){
-        if (totalTime != nil) {
-            self.player?.seek(to: CMTimeMake(Int64(slider.value * Float(totalTime!)), 1))
+        if (totalTime > 0) {
+            self.player?.seek(to: CMTimeMake(Int64(slider.value * Float(totalTime)), 1))
             self.player?.play()
             self.centerPlayOrPauseBtn?.isSelected = false
         }
@@ -827,7 +823,7 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
     /**
      *  监听设备旋转通知
      */
-   private func listeningRotating()  {
+    private func listeningRotating()  {
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
         NotificationCenter.default.addObserver(self, selector: #selector(onDeviceOrientationChange), name:NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
@@ -852,12 +848,11 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
         if isLocked {
             return
         }
-        ///根据设备方向来判断的
+        
         let orientation = UIDevice.current.orientation
         
         switch orientation {
         case .portraitUpsideDown:
-            /// 设备(屏幕)直立，上下顛倒
             let frame = UIScreen.main.bounds
             self.center = CGPoint.init(x: frame.origin.x + ceil(frame.size.width/2), y: frame.origin.y + ceil(frame.size.height/2))
             self.frame = frame
@@ -875,7 +870,6 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
             break
             
         case .portrait:
-            /// 设备(屏幕)直立
             let frame = UIScreen.main.bounds
             self.center = CGPoint.init(x: frame.origin.x + ceil(frame.size.width/2), y: frame.origin.y + ceil((frame.size.width*9/16)/2))
             self.frame = CGRect.init(x: frame.origin.x, y: frame.origin.x, width: frame.size.width, height: Screen_width * 9/16)
@@ -892,7 +886,7 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
             break
             
         case .landscapeLeft:
-            /// 设备(屏幕)向左横置
+            
             let frame = UIScreen.main.bounds
             self.center = CGPoint.init(x: frame.origin.x + ceil(frame.size.width/2), y: frame.origin.y + ceil(frame.size.height/2))
             self.frame = frame
@@ -908,7 +902,6 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
             break
             
         case .landscapeRight:
-            /// 设备(屏幕)向右橫置
             let frame = UIScreen.main.bounds
             self.center = CGPoint.init(x: frame.origin.x + ceil(frame.size.width/2), y: frame.origin.y + ceil(frame.size.height/2))
             self.frame = frame
@@ -975,20 +968,20 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
         
         /// 锁屏按钮
         
-//        self.lockBtn = {
-//            
-//            let lockBtn = UIButton.init(type: .custom)
-//            lockBtn.setImage(MIMAGE("Player_unlock-nor"), for: .normal)
-//            lockBtn.setImage(MIMAGE("Player_lock-nor"), for: .selected)
-//            lockBtn.addTarget(self, action: #selector(lockBtnClick(sender:)), for: .touchUpInside)
-//            self.addSubview(lockBtn)
-//            lockBtn.snp.makeConstraints({ (make) in
-//                make.left.equalTo(self.snp.left).offset(5);
-//                make.centerY.equalTo(self)
-//                make.size.equalTo(CGSize.init(width: 40, height: 40));
-//            })
-//            return lockBtn
-//        }()
+        //        self.lockBtn = {
+        //
+        //            let lockBtn = UIButton.init(type: .custom)
+        //            lockBtn.setImage(MIMAGE("Player_unlock-nor"), for: .normal)
+        //            lockBtn.setImage(MIMAGE("Player_lock-nor"), for: .selected)
+        //            lockBtn.addTarget(self, action: #selector(lockBtnClick(sender:)), for: .touchUpInside)
+        //            self.addSubview(lockBtn)
+        //            lockBtn.snp.makeConstraints({ (make) in
+        //                make.left.equalTo(self.snp.left).offset(5);
+        //                make.centerY.equalTo(self)
+        //                make.size.equalTo(CGSize.init(width: 40, height: 40));
+        //            })
+        //            return lockBtn
+        //        }()
         
         self.switchCircuitView = {
             let switchCircuitView = SwitchCircuitView()
@@ -1239,5 +1232,5 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-
+    
 }

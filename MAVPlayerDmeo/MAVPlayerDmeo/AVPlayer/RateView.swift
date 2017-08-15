@@ -147,25 +147,25 @@ class RateView: UIImageView {
      */
     @objc private func clickRateBtnEvent(){
         
-        MPlayerView.shared.rateValue! += 0.2
-        if MPlayerView.shared.rateValue! >= 1.2 && MPlayerView.shared.rateValue! < 1.3 {
+        MPlayerView.shared.rateValue += 0.2
+        if MPlayerView.shared.rateValue >= 1.2 && MPlayerView.shared.rateValue < 1.3 {
             MPlayerView.shared.rateValue = 1.2
-        }else if MPlayerView.shared.rateValue! >= 1.4 && MPlayerView.shared.rateValue! < 1.5 {
+        }else if MPlayerView.shared.rateValue >= 1.4 && MPlayerView.shared.rateValue < 1.5 {
             MPlayerView.shared.rateValue = 1.5
-        }else if MPlayerView.shared.rateValue! > 1.5 {
+        }else if MPlayerView.shared.rateValue > 1.5 {
             MPlayerView.shared.rateValue = 1.0
         }
         
-        MPlayerView.shared.player?.rate = MPlayerView.shared.rateValue!
+        MPlayerView.shared.player?.rate = MPlayerView.shared.rateValue
         
         MPlayerView.shared.centerPlayOrPauseBtn?.isSelected = false
         if MPlayerView.shared.isLOCAL {
             rateBtn?.setImage(MIMAGE("选中倍速"), for: .normal)
             MPlayerView.shared.ratelabel?.textColor = UIColorFromRGB(0xf6a54a)
-            MPlayerView.shared.ratelabel?.text = String.init(format: "倍速 %.1fx", MPlayerView.shared.rateValue!)
+            MPlayerView.shared.ratelabel?.text = String.init(format: "倍速 %.1fx", MPlayerView.shared.rateValue)
             
         }else{
-            rateLB?.text = String.init(format: "倍速 %.1fx", MPlayerView.shared.rateValue!)
+            rateLB?.text = String.init(format: "倍速 %.1fx", MPlayerView.shared.rateValue)
             videoLB?.textColor = Whit
             audioLB?.textColor = Whit
             rateLB?.textColor = UIColorFromRGB(0xf6a54a)
