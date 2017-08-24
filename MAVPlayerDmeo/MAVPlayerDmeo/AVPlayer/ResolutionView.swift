@@ -53,7 +53,6 @@ class ResolutionView: UIView {
      */
     @objc private func SDBtnClick(button:UIButton){
         MPlayerView.shared.resolutionBtn?.setTitle("高清", for: .normal)
-        MPlayerView.shared.rateView?.rateLB?.text = "倍速 1.0x"
         MPlayerView.shared.rateView?.rateLB?.textColor = Whit
         self.isHidden = true
         if MPlayerView.shared.chanel ==  CHANNEL_LOW {
@@ -70,11 +69,10 @@ class ResolutionView: UIView {
      */
     @objc private func HDBtnClick(button:UIButton){
         MPlayerView.shared.resolutionBtn?.setTitle("标清", for: .normal)
-        MPlayerView.shared.rateView?.rateLB?.text = "倍速 1.0x"
         MPlayerView.shared.rateView?.rateLB?.textColor = Whit
         self.isHidden = true
-        if MPlayerView.shared.chanel == CHANNEL_LOW  {
-            MPlayerView.shared.chanel = CHANNEL_HIGH
+        if MPlayerView.shared.chanel == CHANNEL_HIGH   {
+            MPlayerView.shared.chanel = CHANNEL_LOW
             ParsingEncrypteString().exchangeSDorHDWithUrl(videoId: MPlayerView.shared.videoParseCode!, type: MPlayerView.shared.videoType!, channel: MPlayerView.shared.chanel, local: MPlayerView.shared.isLOCAL, success: { (videoUrl) in
                 MPlayerView.shared.exchangeWithURL(videoURLStr: videoUrl)
                 

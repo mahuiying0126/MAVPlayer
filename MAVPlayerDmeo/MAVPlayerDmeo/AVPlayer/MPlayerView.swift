@@ -227,8 +227,6 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
         self.playerItem = self.getPlayItemWithURLString(url: videoURLStr)
         self.player?.replaceCurrentItem(with: self.playerItem)
         self.player?.seek(to: CMTimeMake(Int64(currentTime), 1))
-        self.player?.rate = self.rateValue
-        //        self.player?.play()
     }
     
     //MARK: - 播放器手势添加与创建
@@ -320,7 +318,7 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
             switch self.panDirection! {
             case .HorizontalMoved:
                 
-                self.player?.play()
+                self.player?.rate = self.rateValue
                 self.horizontalLabel?.isHidden = true
                 ///快进、快退时候把开始播放按钮改为播放状态
                 self.seekTime(dragedTime: self.sumTime!)
@@ -408,7 +406,7 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
         
         if self.player?.currentItem?.status == .readyToPlay {
             self.player?.seek(to: dragedTime, completionHandler: { (finished) in
-                self.player?.play()
+                self.player?.rate = self.rateValue
             })
         }
     }
@@ -443,7 +441,7 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
             break
         case .oldDeviceUnavailable:
             // 耳机拔掉
-            self.player?.play()
+            self.player?.rate = self.rateValue
             break
         default:
             break
@@ -582,6 +580,7 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
                 stopAnimation()
                 //时间刷新,倍速
                 addTimeObserve()
+                self.player?.rate = self.rateValue
                 enableAudioTracks(isable: true, playerItem: self.playerItem!)
                 break
             case .failed:
@@ -658,7 +657,7 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
         if sender.isSelected {
             self.player?.pause()
         }else{
-            self.player?.play()
+            self.player?.rate = self.rateValue
         }
     }
     
@@ -814,7 +813,7 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
     @objc private func progressSliderTouchEnded(slider:UISlider){
         if (totalTime > 0) {
             self.player?.seek(to: CMTimeMake(Int64(slider.value * Float(totalTime)), 1))
-            self.player?.play()
+            self.player?.rate = self.rateValue
             self.centerPlayOrPauseBtn?.isSelected = false
         }
     }
@@ -861,7 +860,7 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
             self.resolutionBtn?.snp.updateConstraints({ (make) in
                 make.right.equalTo(fullScreenBtn!.snp.left).offset(-2)
                 make.top.equalTo(bottomImageView!)
-                make.size.equalTo(CGSize.init(width:isLOCAL ? 0 : 40, height: 40))
+                make.size.equalTo(CGSize.init(width: 40, height: 40))
             })
             
             self.fullScreenBtn?.isSelected = true
@@ -878,7 +877,7 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
             self.resolutionBtn?.snp.updateConstraints({ (make) in
                 make.right.equalTo(fullScreenBtn!.snp.left).offset(-2)
                 make.top.equalTo(bottomImageView!)
-                make.size.equalTo(CGSize.init(width:isLOCAL ? 0 : 40, height: 40))
+                make.size.equalTo(CGSize.init(width:0 , height: 40))
             })
             self.fullScreenBtn?.isSelected = false
             self.resolutionView?.isHidden = true
@@ -895,7 +894,7 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
             self.resolutionBtn?.snp.updateConstraints({ (make) in
                 make.right.equalTo(fullScreenBtn!.snp.left).offset(-2)
                 make.top.equalTo(bottomImageView!)
-                make.size.equalTo(CGSize.init(width:isLOCAL ? 0 : 40 , height: 40))
+                make.size.equalTo(CGSize.init(width: 40 , height: 40))
             })
             self.fullScreenBtn?.isSelected = true
             self.isFullScreen = true
@@ -910,7 +909,7 @@ final class MPlayerView: UIView,UIGestureRecognizerDelegate {
             self.resolutionBtn?.snp.updateConstraints({ (make) in
                 make.right.equalTo(fullScreenBtn!.snp.left).offset(-2)
                 make.top.equalTo(bottomImageView!)
-                make.size.equalTo(CGSize.init(width: isLOCAL ? 0 : 40, height: 40))
+                make.size.equalTo(CGSize.init(width: 40, height: 40))
             })
             self.fullScreenBtn?.isSelected = true
             self.isFullScreen = true
